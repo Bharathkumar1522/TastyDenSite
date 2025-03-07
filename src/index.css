@@ -1,0 +1,671 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+body {
+  font-family: 'Poppins';
+  background-color: #000000; /* Add a default background */
+}
+
+
+/* NAVBAR */
+
+.navbar {
+  background: rgb(0, 0, 0);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #e63946;
+}
+
+/* Mobile Navigation */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    top: 100px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Animated Hamburger Menu */
+  .bar.open:nth-child(1) {
+    transform: rotate(45deg) translateY(5px);
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px);
+  }
+}
+
+
+
+/* HOMEPAGE */
+
+
+.home-bg{
+  background-image: url('https://res.cloudinary.com/dyecmgvcy/image/upload/v1740993803/homepagePic.jpg');
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  /* margin-top: 5rem; */
+}
+.bg-tint{
+  padding: 12% 5%;
+}
+
+@media screen and (max-width: 640px) {
+  .home-bg{
+    background-position: right center;
+  }
+  .bg-tint{
+    padding-top: 45%;
+    background-color: #0000005e;
+  }
+}
+
+
+
+/* Category Buttons */
+/* Category Filter Section */
+.category-filter {
+  display: flex;               /* Arrange items in a row */
+  overflow-x: auto;            /* Enable horizontal scrolling */
+  padding: 10px 0;             /* Add some space at the top and bottom */
+  gap: 1rem;                   /* Space between each button */
+  scroll-snap-type: x mandatory; /* For smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.category-button {
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  white-space: nowrap;  /* Prevent the text from wrapping */
+  flex-shrink: 0;       /* Prevent buttons from shrinking */
+  transition: background-color 0.3s;
+}
+
+.category-button.active {
+  background-color: #fff;
+  color: #e63946;
+  font-weight: 600;
+  border: inset 3px rgb(191, 190, 190);
+}
+
+.category-filter::-webkit-scrollbar {
+  height: 8px;  /* Height of the scrollbar */
+}
+
+.category-filter::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 10px;
+}
+
+.category-filter::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Hover color for scrollbar */
+}
+
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts based on available space */
+  gap: 16px;
+  justify-content: start;
+}
+
+
+.menu-items {
+  display: flex; /* Use flexbox for better control */
+  flex-wrap: wrap; /* Ensures wrapping */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px; /* Keep consistent spacing */
+  padding: 20px;
+  background-color: #3f3f3f;
+  border-radius: 10px;
+}
+
+.menu-item {
+  width: 250px; /* Set a fixed width for uniformity */
+  height: 400px;
+  background-color: #000000;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+.menu-item img {
+  max-width: 100%;
+  height: 180px; /* Fixed height for all images */
+  object-fit: contain; /* Ensures full image visibility */
+}
+
+.menu-item h2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.menu-item p {
+  font-size: 0.9rem;
+  color: #fefefe;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.menu-item span {
+  font-weight: bold;
+  color: #f39c12;
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .menu-items {
+    justify-content: center; /* Center items on small screens */
+  }
+  .category-button {
+    font-size: 0.875rem; /* Adjust text size for smaller screens */
+  }
+}
+
+
+
+
+.ambience-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+
+.ambience-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.ambience-item:nth-child(even) {
+  flex-direction: row-reverse; /* Alternate image & text layout */
+}
+
+.ambience-img {
+  width: 50%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.ambience-img:hover {
+  transform: scale(1.05);
+}
+
+.ambience-text {
+  width: 50%;
+  text-align: left;
+}
+
+.ambience-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.ambience-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .ambience-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .ambience-img,
+  .ambience-text {
+    width: 100%;
+  }
+}
+
+
+
+
+.food-gallery-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #000000; /* Dark background for contrast */
+  color: white;
+}
+
+.gallery-container {
+  max-width: 1200px; /* Restrict max width to prevent stretching */
+  margin: 0 auto; /* Center the container */
+  padding: 2rem;
+  background-color: #202020;
+  border-radius: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 100%; /* Ensures it doesn’t exceed the container */
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px; /* Smooth rounded edges */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+.testimonials-section {
+  background-color: #000000;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: #222;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Adjust to space items evenly */
+  height: 400px; /* Set a fixed height for uniformity */
+  width: 300px; /* Fixed width */
+  margin: 0 auto; /* Center cards */
+}
+
+.testimonial-img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-rating {
+  color: #f39c12;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  color: #ccc;
+  padding: 0 10px;
+  text-align: center;
+  flex-grow: 1; /* Makes sure text doesn’t push the card height */
+  overflow: hidden;
+  max-height: 80px; /* Prevent excessive height due to long text */
+}
+
+/* For very small screens like mobile */
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: 20px;
+  }
+  
+  .testimonial-cards {
+    grid-template-columns: 1fr; /* Stacks cards in a single column */
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+}
+
+
+
+/* General styling for the Order Now section */
+.order-now-section {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Container for the order now section */
+.order-now-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.order-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Description */
+.order-description {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Button container */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+/* Chat button */
+.chat-button {
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on chat button */
+.chat-button:hover {
+  background-color: #128C7E;
+}
+
+/* Copy number button */
+.copy-button {
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on copy button */
+.copy-button:hover {
+  background-color: #ddd;
+}
+
+/* Icons inside buttons */
+.whatsapp-icon,
+.copy-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .order-heading {
+    font-size: 1.5rem;
+  }
+
+  .order-description {
+    font-size: 1rem;
+  }
+
+  .chat-button,
+  .copy-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+.restaurant-location-section {
+  background-color: #000000;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between; /* Space between map and footer */
+  gap: 20px;
+  background-color: #1e1e1e;
+}
+
+.google-maps-container {
+  flex: 1;
+  max-width: 40%; /* Makes sure map doesn't stretch too much */
+  margin-top: 20px;
+}
+
+.footer-container {
+  flex: 1;
+  max-width: 55%; /* Gives enough space for the footer content */
+  margin-top: 20px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer-logo-img {
+  max-width: 300px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.footer-column {
+  color: #ccc;
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column li {
+  font-size: 1rem;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .restaurant-location-section {
+    padding: 20px;
+  }
+  .footer-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+  .google-maps-container {
+    max-width: 100%; /* Makes sure map doesn't stretch too much */
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .google-maps-container iframe {
+    height: 300px;
+  }
+
+  .footer-logo-img {
+    max-width: 190px;
+    margin-bottom: 25px;
+  }
+
+  .footer-main {
+    flex-direction: column; /* Stack map and footer on smaller screens */
+    align-items: center; /* Center the content */
+  }
+}
+
+
+.footer-icon-container{
+  display: flex;
+  justify-content:space-between;
+}
+.footer-icon-bottom{
+  display: flex;
+  list-style: none;
+}
+
+.icon-desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 60px;
+  color: #fff;
+  transition: 0.5s ease;
+  margin-left: 19px;
+}
+
+.icon-desc:hover{
+  font-size: 50px;
+  color: #e63946;
+  box-shadow: 0 0 40px #d54b01;
+}
+
+@media (max-width: 768px) {
+  .footer-icon-container{
+    display: flex;
+    flex-direction: column-reverse;
+    
+  }
+  .icon-desc{
+    height: 30px;
+    width: 30px;
+  }
+  .footer-icon-bottom{
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+  }
+  
+}
