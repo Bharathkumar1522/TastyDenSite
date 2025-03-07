@@ -9,6 +9,7 @@ const foodImages = [
     "https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741174330/foodgallery4_hzajze.webp",
     "https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741174331/foodgallery5_hlqsvw.webp",
     "https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741174331/foodgallery6_lw9yvr.webp",
+    "https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/c_crop,ar_1:1/v1741326785/WhatsApp_Image_2025-02-23_at_12.00.29_cea29b2b_yhueyx.jpg",
     "https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741174332/foodgallery7_azdvgl.webp",
     "https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741322222/WhatsApp_Image_2025-02-23_at_12.00.26_478f557f_whmfgh.jpg",
     ];

@@ -75,7 +75,7 @@ const allItems = [
         category: "Fried Chicken",
         name: "Cheese Chicken Popcorn",
         description: "Cheesy chicken popcorn.",
-        price: "₹120",
+        price: "₹140",
         imageUrl: "/v1741169903/chickencheesepopcorn_xri8xg.png",
         },
         {
@@ -83,7 +83,7 @@ const allItems = [
         category: "Fried Chicken",
         name: "Chicken Nuggets (5pc)",
         description: "Crispy chicken nuggets.",
-        price: "₹100",
+        price: "₹90",
         imageUrl: "v1741169892/chickennuggets_w4q9ne.png",
         },
         {
@@ -91,7 +91,7 @@ const allItems = [
         category: "Fried Chicken",
         name: "Chicken Wings (5pc)",
         description: "Spicy chicken wings.",
-        price: "₹120",
+        price: "₹150",
         imageUrl: "/v1741169879/chickenwings_juausp.png",
         },
         {
@@ -99,7 +99,7 @@ const allItems = [
         category: "Fried Chicken",
         name: "Chicken Lollypop (5pc)",
         description: "Chicken lollypop.",
-        price: "₹130",
+        price: "₹160",
         imageUrl: "v1741169893/chickenlollypop_ptplsj.png",
         },
         {
@@ -107,7 +107,7 @@ const allItems = [
         category: "Fried Chicken",
         name: "Chicken Strips",
         description: "Crispy chicken strips.",
-        price: "₹110",
+        price: "₹150",
         imageUrl: "v1741169880/chickenstrips_y9xgte.png",
         },
     
@@ -149,7 +149,7 @@ const allItems = [
         category: "Short Eats",
         name: "Potato Wedges (R)",
         description: "Crispy potato wedges (Regular).",
-        price: "₹70",
+        price: "₹60",
         imageUrl: "v1741170544/potatowedges_gae7ie.png",
         },
         {
@@ -157,7 +157,7 @@ const allItems = [
         category: "Short Eats",
         name: "Potato Wedges (M)",
         description: "Crispy potato wedges (Medium).",
-        price: "₹100",
+        price: "₹90",
         imageUrl: "v1741170544/potatowedges_gae7ie.png",
         },
         {
@@ -173,7 +173,7 @@ const allItems = [
         category: "Short Eats",
         name: "Veg Nuggets (8pc)",
         description: "Vegetarian nuggets.",
-        price: "₹90",
+        price: "₹100",
         imageUrl: "v1741169880/vegnuggets_yv6rip.png",
         },
         {
@@ -181,11 +181,11 @@ const allItems = [
         category: "Short Eats",
         name: "Potato Chese blends (10pc)",
         description: "Cheesy potato blends.",
-        price: "₹110",
+        price: "₹70",
         imageUrl: "v1741169871/potatocheeseblends_e97efs.png",
         },
     
-        // **Wraps**
+     // **Wraps**
         {
         id: 23,
         category: "Wraps",
@@ -227,7 +227,7 @@ const allItems = [
         imageUrl: "v1741169866/periperichickenwrap_udsunr.png",
         },
     
-        // **Burgers**
+     // **Burgers**
         {
         id: 28,
         category: "Burgers",
@@ -263,7 +263,7 @@ const allItems = [
         {
         id: 32,
         category: "Burgers",
-        name: "Chicken Burgers",
+        name: "Chicken Burger",
         description: "Classic chicken burger.",
         price: "₹90",
         imageUrl: "v1741169865/chickenburger_qijmbo.png",
@@ -271,7 +271,7 @@ const allItems = [
         {
         id: 33,
         category: "Burgers",
-        name: "Spl Chicken Burgers",
+        name: "Spl Chicken Burger",
         description: "Special chicken burger.",
         price: "₹100",
         imageUrl: "v1741170558/splchickenburger_lwslxb.png",
@@ -293,7 +293,7 @@ const allItems = [
         imageUrl: "v1741245568/chickentowerburger_l3ihak.png",
         },
     
-        // **Pizza**
+    // **Pizza**
         {
         id: 36,
         category: "Pizzas",
@@ -641,7 +641,7 @@ const allItems = [
             category: "Ice Creams",
             name: "Vanilla",
             description: "Classic vanilla ice cream.",
-            price: "₹60",
+            price: "₹40",
             imageUrl: "/v1741262475/vannilaicecream_a2gho8.png",
         },
         {
@@ -649,7 +649,7 @@ const allItems = [
             category: "Ice Creams",
             name: "Strawberry",
             description: "Strawberry ice cream.",
-            price: "₹70",
+            price: "₹40",
             imageUrl: "/v1741169827/strawberryicecream_hsxaug.png",
         },
         {
@@ -657,7 +657,7 @@ const allItems = [
             category: "Ice Creams",
             name: "Black Current",
             description: "Black currant ice cream.",
-            price: "₹80",
+            price: "₹60",
             imageUrl: "/v1741169833/blackcurrent_duushv.png",
         },
         {
@@ -665,7 +665,7 @@ const allItems = [
             category: "Ice Creams",
             name: "Butter Scotch",
             description: "Butterscotch ice cream.",
-            price: "₹80",
+            price: "₹60",
             imageUrl: "/v1741169910/butterscotch_h7qvs4.png",
         },
         {
@@ -673,7 +673,7 @@ const allItems = [
             category: "Ice Creams",
             name: "Chocolate",
             description: "Chocolate ice cream.",
-            price: "₹90",
+            price: "₹60",
             imageUrl: "v1741169829/chocolateicecream_rhckni.png",
         },
         
@@ -747,7 +747,7 @@ const allItems = [
             category: "Milk Shakes",
             name: "Chocolate",
             description: "Chocolate milkshake.",
-            price: "₹120",
+            price: "₹100",
             imageUrl: "v1741169824/chocolatemilkshake_cxduph.png",
         },
         {
@@ -755,7 +755,7 @@ const allItems = [
             category: "Milk Shakes",
             name: "Brownie",
             description: "Brownie milkshake.",
-            price: "₹110",
+            price: "₹120",
             imageUrl: "v1741169837/browniemilkshake_azelnl.png",
         },
         {
@@ -823,8 +823,8 @@ const allItems = [
     "Biriyani’s",
     "Fried Chicken",
     "Short Eats",
-    "Burgers",
     "Wraps",
+    "Burgers",
     "Pizzas",
     "Garlic Breads",
     "Pasta’s",
