@@ -13,7 +13,7 @@ const Ambience = () => {
         <div className="ambience-container">
             <h1 className="text-white text-3xl sm:text-4xl font-bold text-center mt-20 mb-15">Ambience</h1>
 
-            <div className="ambience-item">
+            <div className="ambience-item ">
                 <motion.img
                 src="https://res.cloudinary.com/dyecmgvcy/image/upload/v1741173420/ambience_b7rmjt.webp"
                 alt="Rustic Meetups"
@@ -31,7 +31,7 @@ const Ambience = () => {
                 </div>
             </div>
 
-            <div className="ambience-item">
+            <div className="ambience-item p-5">
                 <motion.img
                 src="https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741173420/ambience2_vjzmdl.webp"
                 alt="Outdoor Movie Nights"

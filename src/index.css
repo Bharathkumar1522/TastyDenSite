@@ -21,6 +21,7 @@ body {
   transition: all 0.3s ease-in-out;
   color: #ffffff;
   font-weight: 500;
+  z-index: 999;
 }
 
 .nav-container {
@@ -172,13 +173,15 @@ body {
   background-color: #555; /* Hover color for scrollbar */
 }
 
-
+/* 
 .menu-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts based on available space */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
   gap: 16px;
-  justify-content: start;
-}
+  justify-content: space-between;
+} */
 
 
 .menu-items {
@@ -263,9 +266,9 @@ body {
   justify-content: space-between;
   gap: 20px;
   background-color: #1f1f1f;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 .ambience-item:nth-child(even) {
@@ -305,6 +308,10 @@ body {
   .ambience-item {
     flex-direction: column !important;
     text-align: center;
+    padding: 20px;
+  }
+  .ambience-text p {
+    font-size: 0.9rem;
   }
 
   .ambience-img,
@@ -427,7 +434,7 @@ body {
 
 /* General styling for the Order Now section */
 .order-now-section {
-  background-color: #ffffff;
+  background-color: #ebebeb;
   padding: 80px 20px;
   text-align: center;
 }

@@ -850,7 +850,7 @@ const allItems = [
             className="menu p-3 sm:p-15"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }} // Triggers animation when 20% is in view
             >
             <h1 className="text-white text-2xl sm:text-4xl font-bold text-center mb-15">Our Best & Delicious Menu</h1>
@@ -859,7 +859,7 @@ const allItems = [
                 className="category-filter"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut"}}
                 viewport={{ once: true, amount: 0.2 }}
             >
             {categories.map((category) => (
@@ -869,7 +869,7 @@ const allItems = [
                     onClick={() => setSelectedCategory(category)}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: categories.indexOf(category) * 0.1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.2 }}
                 >
                     {category}

@@ -38,7 +38,7 @@ const Home = () => {
 
                 {/* Description Animation */}
                 <motion.p
-                className="text-white w-70 sm:w-130"
+                className="text-white w-70 text-base  sm:w-130"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 1 }}

@@ -5,7 +5,7 @@ const testimonials = [
     {
         name: "Raghavendra Royal",
         position: "Customer",
-        company: "TastyDen",
+        company: "Tasty Den",
         image: "https://res.cloudinary.com/dyecmgvcy/image/upload/v1741264409/malepic_yb0vf4.jpg",
         text: "Nice place to eat tasty food and also very nice ambience and all items are at affordable prices",
         rating: 5,
@@ -13,7 +13,7 @@ const testimonials = [
     {
         name: "Bharath kumar",
         position: "Customer",
-        company: "TastyDen",
+        company: "Tasty Den",
         image: "https://res.cloudinary.com/dyecmgvcy/image/upload/v1741264409/malepic_yb0vf4.jpg",
         text: "Best wraps and friend chicken in puttur. Must try",
         rating: 4,
@@ -21,7 +21,7 @@ const testimonials = [
     {
         name: "Nasirkhan",
         position: "Customer",
-        company: "TasyDen",
+        company: "Tasty Den",
         image: "https://res.cloudinary.com/dyecmgvcy/image/upload/v1741264409/malepic_yb0vf4.jpg",
         text: "If you are looking for best eats in puttur this is the place",
         rating: 5,
