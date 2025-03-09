@@ -130,6 +130,11 @@ body {
 }
 
 
+.menu {
+  overflow: visible !important; /* Ensure visibility */
+  min-height: 100vh; /* Ensure it takes full height */
+}
+
 
 /* Category Buttons */
 /* Category Filter Section */
@@ -182,6 +187,7 @@ body {
   gap: 16px;
   justify-content: space-between;
 } */
+
 
 
 .menu-items {
