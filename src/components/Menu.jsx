@@ -898,6 +898,11 @@ const allItems = [
             </motion.div>
             </div>
             </motion.div>
+            <div className="mt-4 text-center text-white">
+                <p className="text-xl">*₹10 extra for each item for packing.</p>
+            </div>
+
+
         </section>
     );
 };
