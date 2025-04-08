@@ -15,7 +15,7 @@ const testimonials = [
         position: "Customer",
         company: "Tasty Den",
         image: "https://res.cloudinary.com/dyecmgvcy/image/upload/v1741264409/malepic_yb0vf4.jpg",
-        text: "Best wraps and friend chicken in puttur. Must try",
+        text: "Best wraps and fried chicken in puttur. Must try",
         rating: 4,
     },
     {
