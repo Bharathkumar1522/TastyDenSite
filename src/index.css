@@ -661,6 +661,17 @@ a {
   padding: 0 2rem;
 }
 
+/* VISIBILITY CONTROLS */
+.mobile-menu-container {
+  display: none;
+  /* Default: Hidden on Desktop */
+}
+
+.desktop-only {
+  display: block;
+  /* Default: Visible on Desktop */
+}
+
 .menu-items {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

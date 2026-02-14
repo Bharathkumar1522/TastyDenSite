@@ -265,16 +265,15 @@ const Menu = () => {
                 </div>
 
                 {/* === DESKTOP GRID VIEW === */}
-                <div className="menu-items desktop-only">
+                <div className="desktop-only" style={{ width: '100%', minHeight: '600px' }}>
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={selectedCategory}
-                            className="menu-items-grid-inner" // Wrapper for animation
+                            className="menu-items"
                             initial={{ opacity: 0, y: 15 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.35 }}
-                            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem', width: '100%' }}
                         >
                             {filteredItems.map((item, i) => (
                                 <motion.div
