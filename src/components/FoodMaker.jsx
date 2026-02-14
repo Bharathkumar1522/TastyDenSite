@@ -1,50 +1,69 @@
 import { motion } from "framer-motion";
 
+const stats = [
+    { number: "98+", label: "Menu Items" },
+    { number: "5+", label: "Years Exp." },
+    { number: "1K+", label: "Happy Customers" },
+];
+
 const FoodMaker = () => {
     return (
-        <div className="px-8 py-25 sm:px-40 sm:py-30">
-        {/* Animated Title */}
-        <motion.h1
-            className="text-white text-2xl sm:text-4xl font-bold text-center mt-20 mb-15"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-        >
-            Why We are Best Food Maker
-        </motion.h1>
+        <section id="about" className="about-section">
+            <div className="about-grid">
+                {/* Text Column */}
+                <motion.div
+                    className="about-text-col"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    <span className="about-label">The Vibe</span>
+                    <h2 className="about-title">
+                        Puttur's First Cinema Cafe
+                    </h2>
+                    <div className="gold-divider" style={{ margin: '0 0 1.5rem 0' }} />
+                    <p className="about-desc">
+                        We are an open-air, <strong>fast-casual social hub</strong> built around a repurposed shipping container kitchen. Our vibe is "Industrial-Chic" mixed with raw street style—think gravel flooring, exposed metal, and huge screens.
+                        <br /><br />
+                        Whether you're here for an IPL match on our outdoor projector or just craving authentic street-style burgers and fried chicken, we've got the perfect spot for you.
+                    </p>
 
-        {/* Animated Content */}
-        <motion.div
-            className="flex flex-col lg:flex-row justify-between"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-        >
-            <motion.p
-            className="text-white w-auto mb-5 text-sm sm:w-130 sm:text-base text-justify text-center"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            >
-            Step into a world of flavor at our vibrant fast-food haven, where every bite is a testament to our passion for delicious, high-quality food. From our crispy, golden fried chicken and aromatic biryani to our mouthwatering pizzas, juicy burgers, and refreshing mojitos, we craft each dish with the freshest ingredients and a dedication to taste.
-            <br /><br />
-            Indulge in our diverse menu, featuring flavorful rolls, satisfying wraps, and delightful ice creams, all prepared with meticulous care. We believe fast food shouldn't mean compromising on quality, and we strive to deliver an unforgettable dining experience that leaves you craving more.
-            </motion.p>
+                    <div className="about-stats">
+                        {stats.map((stat, i) => (
+                            <motion.div
+                                key={i}
+                                className="stat-item"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 + i * 0.15, duration: 0.7 }}
+                                viewport={{ once: true }}
+                            >
+                                <div className="stat-number">{stat.number}</div>
+                                <div className="stat-label">{stat.label}</div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
 
-            {/* Parallax Image Effect */}
-            <motion.img
-            src="https://res.cloudinary.com/dyecmgvcy/image/upload/v1740994754/section2_hupimn.webp"
-            className="w-100 self-center"
-            initial={{ opacity: 0, scale: 0.9, y: 50 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            />
-        </motion.div>
-        </div>
+                {/* Image Column */}
+                <motion.div
+                    className="about-image-col"
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    <div className="about-image-glow" />
+                    <img
+                        src="https://res.cloudinary.com/dyecmgvcy/image/upload/f_auto,q_auto,w_800/v1740994754/section2_hupimn.webp"
+                        alt="Delicious food by The Tasty Den"
+                        className="about-image"
+                        loading="lazy"
+                    />
+                </motion.div>
+            </div>
+        </section>
     );
 };
 

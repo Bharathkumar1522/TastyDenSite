@@ -1,56 +1,60 @@
 import React from "react";
-import { motion } from "framer-motion"; // Import animations
+import { motion } from "framer-motion";
+
+const ambienceData = [
+    {
+        image: "https://res.cloudinary.com/dyecmgvcy/image/upload/f_auto,q_auto,w_1200/v1741173420/ambience_b7rmjt.webp",
+        title: "Industrial Chic",
+        desc: "A raw, street-style setting with gravel flooring, DIY tire seating, and warm Edison lights that set the perfect mood for a chill night out.",
+    },
+    {
+        image: "https://res.cloudinary.com/dyecmgvcy/image/upload/f_auto,q_auto,w_1200/v1741173420/ambience2_vjzmdl.webp",
+        title: "Screening Lounge",
+        desc: "The ultimate hang-out spot featuring a massive outdoor projector for movies, cricket matches, and live sports events under the stars.",
+    },
+];
 
 const Ambience = () => {
-  // Animation variants
-    const fadeIn = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-    };
-
     return (
-        <section id="gallery">
-        <div className="ambience-container">
-            <h1 className="text-white text-3xl sm:text-4xl font-bold text-center mt-20 mb-15">Ambience</h1>
-
-            <div className="ambience-item ">
-                <motion.img
-                src="https://res.cloudinary.com/dyecmgvcy/image/upload/v1741173420/ambience_b7rmjt.webp"
-                alt="Rustic Meetups"
-                className="ambience-img"
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeIn}
-                viewport={{ once: true }}
-                />
-                <div className="ambience-text">
-                <h2>Rustic Meetups</h2>
-                <p>
-                    Experience our charming outdoor patio, where beautiful lighting and a pleasant ambiance create the ideal setting for memorable meals with friends and family.
+        <section id="ambience" className="ambience-section">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true, amount: 0.2 }}
+            >
+                <h2 className="section-heading">Our Ambience</h2>
+                <div className="gold-divider" />
+                <p className="section-subtitle">
+                    More than just food — we create unforgettable experiences
                 </p>
-                </div>
-            </div>
+            </motion.div>
 
-            <div className="ambience-item p-5">
-                <motion.img
-                src="https://res.cloudinary.com/dyecmgvcy/image/upload/q_auto/v1741173420/ambience2_vjzmdl.webp"
-                alt="Outdoor Movie Nights"
-                className="ambience-img"
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeIn}
-                viewport={{ once: true }}
-                />
-                <div className="ambience-text">
-                <h2>Outdoor Movie Nights</h2>
-                <p>
-                    Our outdoor space transforms into an entertainment hub with a large projector, allowing you to enjoy your favorite films and events under the stars while you dine.
-                </p>
-                </div>
+            <div className="ambience-grid">
+                {ambienceData.map((item, i) => (
+                    <motion.div
+                        key={i}
+                        className="ambience-card"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: i * 0.15 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        <img
+                            src={item.image}
+                            alt={item.title}
+                            className="ambience-card-img"
+                            loading="lazy"
+                        />
+                        <div className="ambience-card-overlay" />
+                        <div className="ambience-card-content">
+                            <h3>{item.title}</h3>
+                            <p>{item.desc}</p>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
-        </div>
         </section>
-        
     );
 };
 
