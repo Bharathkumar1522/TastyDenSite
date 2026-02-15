@@ -961,10 +961,17 @@ a {
 }
 
 /* Existing footer styles */
+/* Existing footer styles */
 .footer-logo-img {
   height: 80px;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
+  width: auto;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  /* Make the white background look intentional with a nice shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* Optional: if the image has a white background, we keep it as a 'card' */
+  border: 2px solid var(--gold);
+  /* Add gold border to tie it in */
 }
 
 .footer-location {
@@ -975,18 +982,24 @@ a {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
+  /* Balanced 50/50 layout */
   max-width: var(--max-width);
   margin: 0 auto;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   overflow: hidden;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .footer-info {
-  padding: 4rem;
+  padding: 3rem;
+  /* Reduced from 4rem for better balance */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  /* Left align content */
+  background: var(--bg-secondary);
 }
 
 .footer-contact-list {
@@ -1076,14 +1089,14 @@ a {
   /* Footer adjustments inside media query */
   .footer-main {
     grid-template-columns: 1fr;
+    /* Stack on smaller screens */
     text-align: center;
   }
 
   .footer-info {
     padding: 2rem;
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    /* Center align on mobile */
   }
 
   .footer-contact-list li {
@@ -1332,10 +1345,7 @@ a {
     display: none !important;
   }
 
-  .menu-items {
-    /* If .menu-items is used as the desktop container, ensure it's hidden */
-    /* Wait, I added desktop-only class to the container. So .desktop-only handles it. */
-  }
+
 
   @media (max-width: 640px) {
     .hero-title {
