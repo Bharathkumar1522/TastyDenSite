@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './index.css';
+import { CartProvider } from './components/CartContext';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import FoodMaker from './components/FoodMaker';
@@ -10,6 +11,7 @@ import FoodGallery from './components/FoodGallery';
 import TestimonialsSection from './components/TestimonialSections';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -25,7 +27,7 @@ function App() {
   };
 
   return (
-    <>
+    <CartProvider>
       <Navbar />
       <Home />
 
@@ -49,6 +51,9 @@ function App() {
 
       <Footer />
 
+      {/* Cart FAB + Drawer */}
+      <Cart />
+
       {/* Scroll to Top FAB */}
       <AnimatePresence>
         {showScrollTop && (
@@ -67,7 +72,7 @@ function App() {
           </motion.button>
         )}
       </AnimatePresence>
-    </>
+    </CartProvider>
   );
 }
 

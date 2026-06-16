@@ -3,141 +3,162 @@ import MenuItem from "./MenuItem";
 import { motion, AnimatePresence } from "framer-motion";
 
 const allItems = [
-    // **Biriyani's**
-    { id: 1, category: "Biriyani's", name: "Hyd Chicken Biriyani", description: "Traditional Hyderabadi chicken biriyani.", price: "₹130", imageUrl: "v1741238941/chickenbiriyani_u9ipk7.png" },
-    { id: 2, category: "Biriyani's", name: "Special Chicken Biriyani", description: "A special variant of Hyderabadi biriyani.", price: "₹160", imageUrl: "specialchickenbiriyani_vdauhq.png" },
-    { id: 3, category: "Biriyani's", name: "Fried Piece Biriyani", description: "Crispy fried chicken piece biriyani.", price: "₹150", imageUrl: "frypiecebiriyani_fom8qa.png" },
-    { id: 4, category: "Biriyani's", name: "Biriyani Rice", description: "Delicious biriyani rice.", price: "₹80", imageUrl: "biriyanirice_xebm6n.png" },
-    { id: 5, category: "Biriyani's", name: "Chicken mini Biriyani", description: "Mini version of chicken biriyani.", price: "₹100", imageUrl: "minibiriyani_hpfqnh.png" },
+    // PIZZA - VEG
+    { id: 101, category: "Pizza - Veg", name: "Margherita Pizza", price: "139", isVeg: true, imageUrl: "v1741257511/margharitapizza_g4vajo.png" },
+    { id: 102, category: "Pizza - Veg", name: "Corn Pizza", price: "149", isVeg: true, imageUrl: "v1741170538/cornpizza_kaubwy.png" },
+    { id: 103, category: "Pizza - Veg", name: "Veg Lovers Pizza", price: "169", isVeg: true, imageUrl: "v1741169854/vegpizza_xhl6o2.png" },
+    { id: 104, category: "Pizza - Veg", name: "Spicy Veg Pizza", price: "179", isVeg: true, imageUrl: "v1741258963/vegsupreme_jbtptg.png" },
+    { id: 105, category: "Pizza - Veg", name: "Mushroom Pizza", price: "199", isVeg: true, imageUrl: "/v1741170535/mushroompizza_oojcia.png" },
+    { id: 106, category: "Pizza - Veg", name: "Paneer Supreme Pizza", price: "219", isVeg: true, imageUrl: "/v1741170535/paneerpizza_ndfo01.png" },
+    { id: 107, category: "Pizza - Veg", name: "Tasty Den Special Pizza", price: "239", isVeg: true, imageUrl: "v1741169854/vegpizza_xhl6o2.png" },
 
-    // **Fried Chicken**
-    { id: 6, category: "Fried Chicken", name: "Fried Chicken Leg Piece", description: "Crispy fried chicken leg piece.", price: "₹80", imageUrl: "friedchickenlegpiece_o4fb72.png" },
-    { id: 7, category: "Fried Chicken", name: "Chicken Popcorn (R)", description: "Delicious fried chicken popcorn (Regular).", price: "₹90", imageUrl: "chickenpopcorn_c50ptf.png" },
-    { id: 8, category: "Fried Chicken", name: "Chicken Popcorn (L)", description: "Delicious fried chicken popcorn (Large).", price: "₹130", imageUrl: "chickenpopcorn_c50ptf.png" },
-    { id: 9, category: "Fried Chicken", name: "Cheese Chicken Popcorn", description: "Cheesy chicken popcorn.", price: "₹140", imageUrl: "/v1741169903/chickencheesepopcorn_xri8xg.png" },
-    { id: 10, category: "Fried Chicken", name: "Chicken Nuggets (5pc)", description: "Crispy chicken nuggets.", price: "₹90", imageUrl: "v1741169892/chickennuggets_w4q9ne.png" },
-    { id: 11, category: "Fried Chicken", name: "Chicken Wings (5pc)", description: "Spicy chicken wings.", price: "₹150", imageUrl: "/v1741169879/chickenwings_juausp.png" },
-    { id: 12, category: "Fried Chicken", name: "Chicken Lollypop (5pc)", description: "Chicken lollypop.", price: "₹160", imageUrl: "v1741169893/chickenlollypop_ptplsj.png" },
-    { id: 13, category: "Fried Chicken", name: "Chicken Strips", description: "Crispy chicken strips.", price: "₹150", imageUrl: "v1741169880/chickenstrips_y9xgte.png" },
+    // PIZZA - NON VEG
+    { id: 201, category: "Pizza - Non Veg", name: "Chicken Pizza", price: "189", isVeg: false, imageUrl: "v1741169850/chickenpizza_aobbaf.png" },
+    { id: 202, category: "Pizza - Non Veg", name: "Spicy Chicken Pizza", price: "199", isVeg: false, imageUrl: "/v1741258188/spicychickenpizza_k0c93a.png" },
+    { id: 203, category: "Pizza - Non Veg", name: "Chicken Delight Pizza", price: "209", isVeg: false, imageUrl: "/v1741258710/chickensupremepizza_lsh5nb.png" },
+    { id: 204, category: "Pizza - Non Veg", name: "Peri Peri Chicken Pizza", price: "209", isVeg: false, imageUrl: "/v1741258188/spicychickenpizza_k0c93a.png" },
+    { id: 205, category: "Pizza - Non Veg", name: "Chicken 65 Pizza", price: "219", isVeg: false, imageUrl: "/v1741170525/chicken65pizza_xon5k4.png" },
+    { id: 206, category: "Pizza - Non Veg", name: "Chicken Exotica Pizza", price: "229", isVeg: false, imageUrl: "/v1741258710/chickensupremepizza_lsh5nb.png" },
+    { id: 207, category: "Pizza - Non Veg", name: "Chicken Tikka Pizza", price: "239", isVeg: false, imageUrl: "/v1741258368/chickentikkapizza_tuibsl.png" },
+    { id: 208, category: "Pizza - Non Veg", name: "Tasty Den Special Pizza", price: "249", isVeg: false, imageUrl: "v1741169850/chickenpizza_aobbaf.png" },
 
-    // **Short Eats**
-    { id: 14, category: "Short Eats", name: "French Fries (R)", description: "Crispy and tasty French fries (Regular).", price: "₹60", imageUrl: "v1741169906/frenchfries_ae1m3e.png" },
-    { id: 15, category: "Short Eats", name: "French Fries (M)", description: "Crispy and tasty French fries (Medium).", price: "₹90", imageUrl: "v1741169906/frenchfries_ae1m3e.png" },
-    { id: 16, category: "Short Eats", name: "French Fries (L)", description: "Crispy and tasty French fries (Large).", price: "₹130", imageUrl: "v1741169906/frenchfries_ae1m3e.png" },
-    { id: 17, category: "Short Eats", name: "Cheese Fries", description: "Cheesy French fries.", price: "₹100", imageUrl: "v1741169883/cheesefries_mxyoi6.png" },
-    { id: 18, category: "Short Eats", name: "Potato Wedges (R)", description: "Crispy potato wedges (Regular).", price: "₹60", imageUrl: "v1741170544/potatowedges_gae7ie.png" },
-    { id: 19, category: "Short Eats", name: "Potato Wedges (M)", description: "Crispy potato wedges (Medium).", price: "₹90", imageUrl: "v1741170544/potatowedges_gae7ie.png" },
-    { id: 20, category: "Short Eats", name: "Potato Wedges (L)", description: "Crispy potato wedges (Large).", price: "₹130", imageUrl: "v1741170544/potatowedges_gae7ie.png" },
-    { id: 21, category: "Short Eats", name: "Veg Nuggets (8pc)", description: "Vegetarian nuggets.", price: "₹100", imageUrl: "v1741169880/vegnuggets_yv6rip.png" },
-    { id: 22, category: "Short Eats", name: "Potato Cheese Blends (10pc)", description: "Cheesy potato blends.", price: "₹70", imageUrl: "v1741169871/potatocheeseblends_e97efs.png" },
+    // BURGER - VEG
+    { id: 301, category: "Burger - Veg", name: "Veg Burger", price: "89", isVeg: true, imageUrl: "v1741169856/vegburger_keo1lz.png" },
+    { id: 302, category: "Burger - Veg", name: "Paneer Burger", price: "109", isVeg: true, imageUrl: "v1741244914/tikkiburger_cfot90.png" },
+    { id: 303, category: "Burger - Veg", name: "Veg Tower Burger", price: "119", isVeg: true, imageUrl: "v1741170553/vegpremiumburger_a63qck.png" },
+    { id: 304, category: "Burger - Veg", name: "Veg BBQ Burger", price: "129", isVeg: true, imageUrl: "v1741169856/vegburger_keo1lz.png" },
+    { id: 305, category: "Burger - Veg", name: "Tasty Den Special Burger", price: "139", isVeg: true, imageUrl: "v1741170553/vegpremiumburger_a63qck.png" },
 
-    // **Wraps**
-    { id: 23, category: "Wraps", name: "Classic Veg Wrap", description: "Classic vegetarian wrap.", price: "₹80", imageUrl: "/v1741169861/vegwrap_ybpzau.png" },
-    { id: 24, category: "Wraps", name: "Paneer Wrap", description: "Paneer wrap.", price: "₹90", imageUrl: "/v1741170543/paneerwrap_uxbp61.png" },
-    { id: 25, category: "Wraps", name: "Peri-Peri Veg Wrap", description: "Spicy peri-peri veg wrap.", price: "₹100", imageUrl: "/v1741169861/vegwrap_ybpzau.png" },
-    { id: 26, category: "Wraps", name: "Classic Chicken Wrap", description: "Classic chicken wrap.", price: "₹90", imageUrl: "v1741169865/chickenwrap_wjtqdr.png" },
-    { id: 27, category: "Wraps", name: "Peri-Peri Chicken Wrap", description: "Spicy peri-peri chicken wrap.", price: "₹110", imageUrl: "v1741169866/periperichickenwrap_udsunr.png" },
+    // BURGER - NON VEG
+    { id: 401, category: "Burger - Non Veg", name: "Chicken Burger", price: "99", isVeg: false, imageUrl: "v1741169865/chickenburger_qijmbo.png" },
+    { id: 402, category: "Burger - Non Veg", name: "Crunchy Chicken Burger", price: "129", isVeg: false, imageUrl: "v1741170530/crunchychickenburger_xwd5ow.png" },
+    { id: 403, category: "Burger - Non Veg", name: "BBQ Chicken Burger", price: "129", isVeg: false, imageUrl: "v1741170558/splchickenburger_lwslxb.png" },
+    { id: 404, category: "Burger - Non Veg", name: "Spicy Chicken Burger", price: "139", isVeg: false, imageUrl: "v1741170558/splchickenburger_lwslxb.png" },
+    { id: 405, category: "Burger - Non Veg", name: "Chicken Tower Burger", price: "149", isVeg: false, imageUrl: "v1741245568/chickentowerburger_l3ihak.png" },
+    { id: 406, category: "Burger - Non Veg", name: "Tasty Den Special Burger", price: "149", isVeg: false, imageUrl: "v1741245568/chickentowerburger_l3ihak.png" },
 
-    // **Burgers**
-    { id: 28, category: "Burgers", name: "Aloo Tikki Burger", description: "Crispy aloo tikki burger.", price: "₹70", imageUrl: "/v1741170549/vegpaneerburger_npbtsb.png" },
-    { id: 29, category: "Burgers", name: "Premium Veg Burger", description: "Premium vegetarian burger.", price: "₹90", imageUrl: "v1741169856/vegburger_keo1lz.png" },
-    { id: 30, category: "Burgers", name: "Veg Tower Burger", description: "Towering vegetarian burger.", price: "₹110", imageUrl: "v1741170553/vegpremiumburger_a63qck.png" },
-    { id: 31, category: "Burgers", name: "Paneer Burger", description: "Paneer burger.", price: "₹90", imageUrl: "v1741244914/tikkiburger_cfot90.png" },
-    { id: 32, category: "Burgers", name: "Chicken Burger", description: "Classic chicken burger.", price: "₹90", imageUrl: "v1741169865/chickenburger_qijmbo.png" },
-    { id: 33, category: "Burgers", name: "Spl Chicken Burger", description: "Special chicken burger.", price: "₹100", imageUrl: "v1741170558/splchickenburger_lwslxb.png" },
-    { id: 34, category: "Burgers", name: "Crunchy Chicken Burger", description: "Crunchy chicken burger.", price: "₹110", imageUrl: "v1741170530/crunchychickenburger_xwd5ow.png" },
-    { id: 35, category: "Burgers", name: "Chicken Tower Burger", description: "Towering chicken burger.", price: "₹140", imageUrl: "v1741245568/chickentowerburger_l3ihak.png" },
+    // PASTA - VEG
+    { id: 501, category: "Pasta - Veg", name: "Creamy Alfredo Veg", price: "149", isVeg: true, imageUrl: "/v1741169845/whitepasta_sd0boa.png" },
+    { id: 502, category: "Pasta - Veg", name: "Creamy Alfredo Mushroom", price: "169", isVeg: true, imageUrl: "/v1741169845/whitepasta_sd0boa.png" },
+    { id: 503, category: "Pasta - Veg", name: "Creamy Alfredo Paneer", price: "179", isVeg: true, imageUrl: "/v1741169845/whitepasta_sd0boa.png" },
+    { id: 504, category: "Pasta - Veg", name: "Arrabbiata Sauce", price: "189", isVeg: true, imageUrl: "v1741169838/redpasta_vd7qxy.png" },
+    { id: 505, category: "Pasta - Veg", name: "Pink Sauce", price: "199", isVeg: true, imageUrl: "v1741169838/redpasta_vd7qxy.png" },
+    { id: 506, category: "Pasta - Veg", name: "Peri Peri Veg", price: "199", isVeg: true, imageUrl: "v1741169838/redpasta_vd7qxy.png" },
 
-    // **Pizzas**
-    { id: 36, category: "Pizzas", name: "Margherita Pizza", description: "Classic margherita pizza.", price: "₹110", imageUrl: "v1741170551/peperonipizza_ifykfw.png" },
-    { id: 37, category: "Pizzas", name: "Double Cheese Margherita", description: "Double cheese margherita pizza.", price: "₹150", imageUrl: "v1741257511/margharitapizza_g4vajo.png" },
-    { id: 38, category: "Pizzas", name: "Sweet Corn Pizza", description: "Sweet corn pizza.", price: "₹120", imageUrl: "v1741170538/cornpizza_kaubwy.png" },
-    { id: 39, category: "Pizzas", name: "Mushroom Pizza", description: "Mushroom pizza.", price: "₹150", imageUrl: "/v1741170535/mushroompizza_oojcia.png" },
-    { id: 40, category: "Pizzas", name: "Paneer Pizza", description: "Paneer pizza.", price: "₹160", imageUrl: "/v1741170535/paneerpizza_ndfo01.png" },
-    { id: 41, category: "Pizzas", name: "Veg Lover's Pizza", description: "Veggie lover's pizza.", price: "₹150", imageUrl: "v1741169854/vegpizza_xhl6o2.png" },
-    { id: 42, category: "Pizzas", name: "Veg Supreme Pizza", description: "Veg supreme pizza.", price: "₹160", imageUrl: "v1741258963/vegsupreme_jbtptg.png" },
-    { id: 43, category: "Pizzas", name: "Classic Chicken Pizza", description: "Classic chicken pizza.", price: "₹160", imageUrl: "v1741169850/chickenpizza_aobbaf.png" },
-    { id: 44, category: "Pizzas", name: "Spicy Chicken Pizza", description: "Spicy chicken pizza.", price: "₹170", imageUrl: "/v1741258188/spicychickenpizza_k0c93a.png" },
-    { id: 45, category: "Pizzas", name: "Chicken 65 Pizza", description: "Chicken 65 pizza.", price: "₹180", imageUrl: "/v1741170525/chicken65pizza_xon5k4.png" },
-    { id: 46, category: "Pizzas", name: "Chicken Tikka Pizza", description: "Chicken tikka pizza.", price: "₹190", imageUrl: "/v1741258368/chickentikkapizza_tuibsl.png" },
-    { id: 47, category: "Pizzas", name: "Chicken Supreme Pizza", description: "Chicken supreme pizza.", price: "₹200", imageUrl: "/v1741258710/chickensupremepizza_lsh5nb.png" },
+    // PASTA - NON VEG
+    { id: 601, category: "Pasta - Non Veg", name: "Creamy Alfredo Chicken", price: "179", isVeg: false, imageUrl: "/whitechickenpasta_j4vtyd.png" },
+    { id: 602, category: "Pasta - Non Veg", name: "Arrabbiata Chicken", price: "189", isVeg: false, imageUrl: "/v1741259794/redchickenpasta_kqjhy5.png" },
+    { id: 603, category: "Pasta - Non Veg", name: "Pink Sauce Chicken", price: "199", isVeg: false, imageUrl: "/v1741259794/redchickenpasta_kqjhy5.png" },
+    { id: 604, category: "Pasta - Non Veg", name: "Peri Peri Chicken", price: "209", isVeg: false, imageUrl: "/v1741259794/redchickenpasta_kqjhy5.png" },
 
-    // **Garlic Breads**
-    { id: 48, category: "Garlic Breads", name: "Plain Garlic Bread", description: "Plain garlic bread.", price: "₹80", imageUrl: "v1741169849/garlicbread_hduhbr.png" },
-    { id: 49, category: "Garlic Breads", name: "Cheese Garlic Bread", description: "Cheesy garlic bread.", price: "₹100", imageUrl: "v1741259133/cheesegarlicbread_uufav0.png" },
-    { id: 50, category: "Garlic Breads", name: "Veg Garlic Bread (C3)", description: "Vegetarian garlic bread with toppings.", price: "₹120", imageUrl: "v1741169849/garlicbread_hduhbr.png" },
-    { id: 51, category: "Garlic Breads", name: "Chicken Garlic Bread", description: "Chicken garlic bread.", price: "₹120", imageUrl: "/v1741259430/chickengarlic_y3tqhq.png" },
-    { id: 52, category: "Garlic Breads", name: "Chicken Garlic Bread (C3)", description: "Chicken garlic bread with toppings.", price: "₹140", imageUrl: "/v1741259430/chickengarlic_y3tqhq.png" },
+    // SANDWICH - VEG
+    { id: 701, category: "Sandwich - Veg", name: "Veg Grill Sandwich", price: "89", isVeg: true, imageUrl: "v1741261880/vegsandwich_mlcxkw.png" },
+    { id: 702, category: "Sandwich - Veg", name: "Grill Corn Sandwich", price: "99", isVeg: true, imageUrl: "v1741260428/cornsandwich_piai9d.png" },
+    { id: 703, category: "Sandwich - Veg", name: "Veg Cheese Sandwich", price: "99", isVeg: true, imageUrl: "v1741169850/cheesesandwich_bnn8wh.png" },
+    { id: 704, category: "Sandwich - Veg", name: "BBQ Paneer Sandwich", price: "109", isVeg: true, imageUrl: "/v1741170543/paneersandwich_afttjv.png" },
+    { id: 705, category: "Sandwich - Veg", name: "Cheese Toast Sandwich", price: "109", isVeg: true, imageUrl: "v1741169850/cheesesandwich_bnn8wh.png" },
+    { id: 706, category: "Sandwich - Veg", name: "Paneer Sandwich", price: "119", isVeg: true, imageUrl: "/v1741170543/paneersandwich_afttjv.png" },
+    { id: 707, category: "Sandwich - Veg", name: "Mushroom Sandwich", price: "139", isVeg: true, imageUrl: "v1741261880/vegsandwich_mlcxkw.png" },
 
-    // **Pasta's**
-    { id: 53, category: "Pasta's", name: "White Sauce Veg Pasta", description: "Vegetarian pasta in white sauce.", price: "₹100", imageUrl: "/v1741169845/whitepasta_sd0boa.png" },
-    { id: 54, category: "Pasta's", name: "Red Sauce Veg Pasta", description: "Vegetarian pasta in red sauce.", price: "₹100", imageUrl: "v1741169838/redpasta_vd7qxy.png" },
-    { id: 55, category: "Pasta's", name: "White Sauce Chicken Pasta", description: "Chicken pasta in white sauce.", price: "₹120", imageUrl: "/whitechickenpasta_j4vtyd.png" },
-    { id: 56, category: "Pasta's", name: "Red Sauce Chicken Pasta", description: "Chicken pasta in red sauce.", price: "₹120", imageUrl: "/v1741259794/redchickenpasta_kqjhy5.png" },
+    // SANDWICH - NON VEG
+    { id: 801, category: "Sandwich - Non Veg", name: "Chicken Sandwich", price: "109", isVeg: false, imageUrl: "/v1741170538/chickensandwich_syot5z.png" },
+    { id: 802, category: "Sandwich - Non Veg", name: "Chicken Cheese Sandwich", price: "119", isVeg: false, imageUrl: "/v1741170538/chickensandwich_syot5z.png" },
+    { id: 803, category: "Sandwich - Non Veg", name: "Crunchy Chicken Sandwich", price: "129", isVeg: false, imageUrl: "/v1741170538/chickensandwich_syot5z.png" },
+    { id: 804, category: "Sandwich - Non Veg", name: "BBQ Chicken Sandwich", price: "129", isVeg: false, imageUrl: "/v1741170538/chickensandwich_syot5z.png" },
+    { id: 805, category: "Sandwich - Non Veg", name: "Chicken Tikka Sandwich", price: "139", isVeg: false, imageUrl: "/v1741170538/chickensandwich_syot5z.png" },
 
-    // **Salad's**
-    { id: 57, category: "Salad's", name: "Garden Fresh Salad", description: "Fresh garden salad.", price: "₹80", imageUrl: "v1741170561/vegsalad_hzwn3m.png" },
-    { id: 58, category: "Salad's", name: "Delight Salad", description: "Delightful veg salad.", price: "₹80", imageUrl: "/v1741170561/vegsalad_hzwn3m.png" },
-    { id: 59, category: "Salad's", name: "Corn Peas Salad", description: "Salad with corn and peas.", price: "₹80", imageUrl: "/v1741170550/cornsalad_lvxyxl.png" },
-    { id: 70, category: "Salad's", name: "Chicken Caesar Salad", description: "Classic chicken Caesar salad.", price: "₹100", imageUrl: "v1741170525/chickensalad_fg5ftp.png" },
-    { id: 71, category: "Salad's", name: "Crunchy Chicken Salad", description: "Crunchy chicken salad.", price: "₹100", imageUrl: "v1741170525/chickensalad_fg5ftp.png" },
+    // WRAPS - VEG
+    { id: 901, category: "Wraps - Veg", name: "Veg Wrap", price: "89", isVeg: true, imageUrl: "/v1741169861/vegwrap_ybpzau.png" },
+    { id: 902, category: "Wraps - Veg", name: "Mushroom Wrap", price: "105", isVeg: true, imageUrl: "/v1741169861/vegwrap_ybpzau.png" },
+    { id: 903, category: "Wraps - Veg", name: "Corn Wrap", price: "109", isVeg: true, imageUrl: "/v1741169861/vegwrap_ybpzau.png" },
+    { id: 904, category: "Wraps - Veg", name: "Paneer Wrap", price: "119", isVeg: true, imageUrl: "/v1741170543/paneerwrap_uxbp61.png" },
+    { id: 905, category: "Wraps - Veg", name: "BBQ Paneer Wrap", price: "129", isVeg: true, imageUrl: "/v1741170543/paneerwrap_uxbp61.png" },
 
-    // **Sandwiches**
-    { id: 60, category: "Sandwiches", name: "Jam Toast Sandwich", description: "Jam toast sandwich.", price: "₹55", imageUrl: "/v1741169833/jamtoastsandwitch_lj98zo.png" },
-    { id: 61, category: "Sandwiches", name: "Peanut Toast Sandwich", description: "Peanut toast sandwich.", price: "₹55", imageUrl: "/v1741170541/peanutbuttersandwich_zeroam.png" },
-    { id: 62, category: "Sandwiches", name: "Gulkand Toast Sandwich", description: "Gulkand toast sandwich.", price: "₹55", imageUrl: "/v1741260197/gulkand_bfyuij.png" },
-    { id: 63, category: "Sandwiches", name: "Nutella Toast Sandwich", description: "Nutella toast sandwich.", price: "₹65", imageUrl: "/v1741170541/peanutbuttersandwich_zeroam.png" },
-    { id: 64, category: "Sandwiches", name: "Corn Sandwich", description: "Corn sandwich.", price: "₹65", imageUrl: "v1741260428/cornsandwich_piai9d.png" },
-    { id: 65, category: "Sandwiches", name: "Cheese Toast Sandwich", description: "Cheese toast sandwich.", price: "₹65", imageUrl: "v1741169850/cheesesandwich_bnn8wh.png" },
-    { id: 66, category: "Sandwiches", name: "Veg Toast Sandwich", description: "Vegetarian toast sandwich.", price: "₹70", imageUrl: "v1741261880/vegsandwich_mlcxkw.png" },
-    { id: 67, category: "Sandwiches", name: "Paneer Toast Sandwich", description: "Paneer toast sandwich.", price: "₹80", imageUrl: "/v1741170543/paneersandwich_afttjv.png" },
-    { id: 68, category: "Sandwiches", name: "Classic Chicken Sandwich", description: "Classic chicken sandwich.", price: "₹80", imageUrl: "/v1741170538/chickensandwich_syot5z.png" },
-    { id: 69, category: "Sandwiches", name: "Spl Chicken Toast Sandwich", description: "Special chicken toast sandwich.", price: "₹100", imageUrl: "v1741170538/chickensandwich_syot5z.png" },
+    // WRAPS - NON VEG
+    { id: 1001, category: "Wraps - Non Veg", name: "Chicken Wrap", price: "99", isVeg: false, imageUrl: "v1741169865/chickenwrap_wjtqdr.png" },
+    { id: 1002, category: "Wraps - Non Veg", name: "Crunchy Chicken Wrap", price: "105", isVeg: false, imageUrl: "v1741169865/chickenwrap_wjtqdr.png" },
+    { id: 1003, category: "Wraps - Non Veg", name: "Tikka Wrap", price: "119", isVeg: false, imageUrl: "v1741169866/periperichickenwrap_udsunr.png" },
+    { id: 1004, category: "Wraps - Non Veg", name: "Peri Peri Chicken Wrap", price: "129", isVeg: false, imageUrl: "v1741169866/periperichickenwrap_udsunr.png" },
+    { id: 1005, category: "Wraps - Non Veg", name: "BBQ Chicken Wrap", price: "139", isVeg: false, imageUrl: "v1741169866/periperichickenwrap_udsunr.png" },
 
-    // **Dessert's**
-    { id: 72, category: "Dessert's", name: "Gulab Jamun", description: "Sweet and soft gulab jamun.", price: "₹40", imageUrl: "/v1741169843/gulabjamun_xwqcun.png" },
-    { id: 73, category: "Dessert's", name: "Gulab Jamun with Ice", description: "Gulab jamun served with ice cream.", price: "₹60", imageUrl: "/v1741169830/gulabjamunwithice_njql8b.png" },
-    { id: 74, category: "Dessert's", name: "Brownie", description: "Chocolate brownie.", price: "₹90", imageUrl: "/v1741169829/brownie_bvvwbh.png" },
-    { id: 75, category: "Dessert's", name: "Brownie with Ice Cream", description: "Brownie served with ice cream.", price: "₹110", imageUrl: "/v1741169832/browniewithicecream_lstmrj.png" },
-    { id: 76, category: "Dessert's", name: "Sizzling Brownie", description: "Sizzling hot brownie.", price: "₹140", imageUrl: "/v1741169829/brownie_bvvwbh.png" },
+    // QUICK BITES - VEG
+    { id: 1101, category: "Quick Bites - Veg", name: "French Fries (Salted)", price: "59 (R) | 119 (L)", isVeg: true, imageUrl: "v1741169906/frenchfries_ae1m3e.png" },
+    { id: 1102, category: "Quick Bites - Veg", name: "Peri Peri Fries", price: "69 (R) | 129 (L)", isVeg: true, imageUrl: "v1741169906/frenchfries_ae1m3e.png" },
+    { id: 1103, category: "Quick Bites - Veg", name: "Veg Nuggets (6pc)", price: "99", isVeg: true, imageUrl: "v1741169880/vegnuggets_yv6rip.png" },
+    { id: 1104, category: "Quick Bites - Veg", name: "Cheese Fries", price: "119 (L)", isVeg: true, imageUrl: "v1741169883/cheesefries_mxyoi6.png" },
+    { id: 1105, category: "Quick Bites - Veg", name: "Loaded Veg Fries", price: "149", isVeg: true, imageUrl: "v1741169883/cheesefries_mxyoi6.png" },
 
-    // **Ice Creams**
-    { id: 77, category: "Ice Creams", name: "Vanilla", description: "Classic vanilla ice cream.", price: "₹40", imageUrl: "/v1741262475/vannilaicecream_a2gho8.png" },
-    { id: 78, category: "Ice Creams", name: "Strawberry", description: "Strawberry ice cream.", price: "₹40", imageUrl: "/v1741169827/strawberryicecream_hsxaug.png" },
-    { id: 79, category: "Ice Creams", name: "Black Current", description: "Black currant ice cream.", price: "₹60", imageUrl: "/v1741169833/blackcurrent_duushv.png" },
-    { id: 80, category: "Ice Creams", name: "Butter Scotch", description: "Butterscotch ice cream.", price: "₹60", imageUrl: "/v1741169910/butterscotch_h7qvs4.png" },
-    { id: 81, category: "Ice Creams", name: "Chocolate", description: "Chocolate ice cream.", price: "₹60", imageUrl: "v1741169829/chocolateicecream_rhckni.png" },
+    // QUICK BITES - NON VEG
+    { id: 1201, category: "Quick Bites - Non Veg", name: "Fried Leg Piece (1pc)", price: "79", isVeg: false, imageUrl: "friedchickenlegpiece_o4fb72.png" },
+    { id: 1202, category: "Quick Bites - Non Veg", name: "Chicken Wings (5pc)", price: "159", isVeg: false, imageUrl: "/v1741169879/chickenwings_juausp.png" },
+    { id: 1203, category: "Quick Bites - Non Veg", name: "Chicken Lollipop (5pc)", price: "169", isVeg: false, imageUrl: "v1741169893/chickenlollypop_ptplsj.png" },
+    { id: 1204, category: "Quick Bites - Non Veg", name: "Loaded Non-Veg Fries", price: "199", isVeg: false, imageUrl: "v1741169883/cheesefries_mxyoi6.png" },
+    { id: 1205, category: "Quick Bites - Non Veg", name: "Chicken Popcorn", price: "89 (R) | 139 (L)", isVeg: false, imageUrl: "chickenpopcorn_c50ptf.png" },
+    { id: 1206, category: "Quick Bites - Non Veg", name: "Chicken Nuggets (5pc)", price: "99 (R) | 149 (L)", isVeg: false, imageUrl: "v1741169892/chickennuggets_w4q9ne.png" },
 
-    // **Milk Shakes**
-    { id: 82, category: "Milk Shakes", name: "Vanilla", description: "Vanilla milkshake.", price: "₹70", imageUrl: "/v1741169829/vannilamilkshake_ahacb2.png" },
-    { id: 83, category: "Milk Shakes", name: "Strawberry", description: "Strawberry milkshake.", price: "₹80", imageUrl: "/v1741169916/strawberrymilkshake_npndt3.png" },
-    { id: 84, category: "Milk Shakes", name: "Pine Apple", description: "Pineapple milkshake.", price: "₹90", imageUrl: "/v1741170555/pineapplemilkshake_creha5.png" },
-    { id: 85, category: "Milk Shakes", name: "Butter Scotch", description: "Butterscotch milkshake.", price: "₹80", imageUrl: "/v1741169822/butterscotchmilkshake_gy471w.png" },
-    { id: 86, category: "Milk Shakes", name: "Banana", description: "Banana milkshake.", price: "₹80", imageUrl: "/v1741169821/bananamilkshake_ayrtcl.png" },
-    { id: 87, category: "Milk Shakes", name: "Mango", description: "Mango milkshake.", price: "₹100", imageUrl: "/v1741169821/mangomilkshake_gbja4t.png" },
-    { id: 88, category: "Milk Shakes", name: "Black Current", description: "Black currant milkshake.", price: "₹100", imageUrl: "v1741169821/blackcurrentmilkshake_blyiha.png" },
-    { id: 89, category: "Milk Shakes", name: "Blue Berry", description: "Blueberry milkshake.", price: "₹100", imageUrl: "/v1741169821/blueberrymilkshake_u9jyes.png" },
-    { id: 90, category: "Milk Shakes", name: "Chocolate", description: "Chocolate milkshake.", price: "₹100", imageUrl: "v1741169824/chocolatemilkshake_cxduph.png" },
-    { id: 91, category: "Milk Shakes", name: "Brownie", description: "Brownie milkshake.", price: "₹120", imageUrl: "v1741169837/browniemilkshake_azelnl.png" },
-    { id: 92, category: "Milk Shakes", name: "Kit-Kat", description: "Kit-Kat milkshake.", price: "₹110", imageUrl: "/v1741263165/kitkat_qbntv9.png" },
-    { id: 93, category: "Milk Shakes", name: "Oreo", description: "Oreo milkshake.", price: "₹110", imageUrl: "/v1741169821/oreamilkshake_k6llgd.png" },
+    // MOMOS - VEG
+    { id: 1301, category: "Momos - Veg", name: "Mix Veg Momos", price: "69", isVeg: true, imageUrl: "" },
+    { id: 1302, category: "Momos - Veg", name: "Saucy Veg Momos", price: "99", isVeg: true, imageUrl: "" },
 
-    // **Mojito's**
-    { id: 94, category: "Mojito's", name: "Virgin Mojito", description: "Classic virgin mojito.", price: "₹80", imageUrl: "/v1741263528/virgin_fum2sk.png" },
-    { id: 95, category: "Mojito's", name: "Blue Ocean", description: "Blue ocean mojito.", price: "₹90", imageUrl: "/v1741169823/blueoceanmojito_of9hgq.png" },
-    { id: 96, category: "Mojito's", name: "Greenery", description: "Green mojito.", price: "₹90", imageUrl: "/v1741263523/greenery_bayjg8.png" },
-    { id: 97, category: "Mojito's", name: "Water Melon", description: "Watermelon mojito.", price: "₹80", imageUrl: "v1741169820/watermelonmojito_sd0tgq.png" },
-    { id: 98, category: "Mojito's", name: "Raspberry", description: "Raspberry mojito.", price: "₹80", imageUrl: "/v1741169819/raspberrymojito_gcjxcl.png" },
+    // MOMOS - NON VEG
+    { id: 1401, category: "Momos - Non Veg", name: "Chicken Momos", price: "89", isVeg: false, imageUrl: "" },
+    { id: 1402, category: "Momos - Non Veg", name: "Saucy Chicken Momos", price: "119", isVeg: false, imageUrl: "" },
+
+    // MILKSHAKES
+    { id: 1501, category: "Milkshakes", name: "Vanilla", price: "69", isVeg: true, imageUrl: "/v1741169829/vannilamilkshake_ahacb2.png" },
+    { id: 1502, category: "Milkshakes", name: "Strawberry", price: "79", isVeg: true, imageUrl: "/v1741169916/strawberrymilkshake_npndt3.png" },
+    { id: 1503, category: "Milkshakes", name: "Butterscotch", price: "79", isVeg: true, imageUrl: "/v1741169822/butterscotchmilkshake_gy471w.png" },
+    { id: 1504, category: "Milkshakes", name: "Banana", price: "79", isVeg: true, imageUrl: "/v1741169821/bananamilkshake_ayrtcl.png" },
+    { id: 1505, category: "Milkshakes", name: "Pineapple", price: "89", isVeg: true, imageUrl: "/v1741170555/pineapplemilkshake_creha5.png" },
+    { id: 1506, category: "Milkshakes", name: "Mango", price: "99", isVeg: true, imageUrl: "/v1741169821/mangomilkshake_gbja4t.png" },
+    { id: 1507, category: "Milkshakes", name: "Black Currant", price: "99", isVeg: true, imageUrl: "v1741169821/blackcurrentmilkshake_blyiha.png" },
+    { id: 1508, category: "Milkshakes", name: "Blueberry", price: "99", isVeg: true, imageUrl: "/v1741169821/blueberrymilkshake_u9jyes.png" },
+    { id: 1509, category: "Milkshakes", name: "Chocolate", price: "99", isVeg: true, imageUrl: "v1741169824/chocolatemilkshake_cxduph.png" },
+    { id: 1510, category: "Milkshakes", name: "KitKat", price: "109", isVeg: true, imageUrl: "/v1741263165/kitkat_qbntv9.png" },
+    { id: 1511, category: "Milkshakes", name: "Oreo", price: "109", isVeg: true, imageUrl: "/v1741169821/oreamilkshake_k6llgd.png" },
+    { id: 1512, category: "Milkshakes", name: "Brownie", price: "129", isVeg: true, imageUrl: "v1741169837/browniemilkshake_azelnl.png" },
+
+    // ICE CREAMS
+    { id: 1601, category: "Ice Creams", name: "Vanilla", price: "49", isVeg: true, imageUrl: "/v1741262475/vannilaicecream_a2gho8.png" },
+    { id: 1602, category: "Ice Creams", name: "Strawberry", price: "49", isVeg: true, imageUrl: "/v1741169827/strawberryicecream_hsxaug.png" },
+    { id: 1603, category: "Ice Creams", name: "Butterscotch", price: "69", isVeg: true, imageUrl: "/v1741169910/butterscotch_h7qvs4.png" },
+    { id: 1604, category: "Ice Creams", name: "Black Currant", price: "69", isVeg: true, imageUrl: "/v1741169833/blackcurrent_duushv.png" },
+    { id: 1605, category: "Ice Creams", name: "Chocolate", price: "69", isVeg: true, imageUrl: "v1741169829/chocolateicecream_rhckni.png" },
+
+    // MOJITO
+    { id: 1701, category: "Mojito", name: "Virgin", price: "69", isVeg: true, imageUrl: "/v1741263528/virgin_fum2sk.png" },
+    { id: 1702, category: "Mojito", name: "Mint", price: "69", isVeg: true, imageUrl: "/v1741263523/greenery_bayjg8.png" },
+    { id: 1703, category: "Mojito", name: "Mango Punch", price: "69", isVeg: true, imageUrl: "/v1741263523/greenery_bayjg8.png" },
+    { id: 1704, category: "Mojito", name: "Blue Curacao", price: "89", isVeg: true, imageUrl: "/v1741169823/blueoceanmojito_of9hgq.png" },
+    { id: 1705, category: "Mojito", name: "Watermelon", price: "89", isVeg: true, imageUrl: "v1741169820/watermelonmojito_sd0tgq.png" },
+    { id: 1706, category: "Mojito", name: "Green Apple", price: "99", isVeg: true, imageUrl: "/v1741263523/greenery_bayjg8.png" },
+    { id: 1707, category: "Mojito", name: "Red Vine Mojito", price: "99", isVeg: true, imageUrl: "/v1741169819/raspberrymojito_gcjxcl.png" },
+
+    // DESSERTS
+    { id: 1801, category: "Desserts", name: "Gulab Jamun", price: "40", isVeg: true, imageUrl: "/v1741169843/gulabjamun_xwqcun.png" },
+    { id: 1802, category: "Desserts", name: "Gulab Jamun with Ice Cream", price: "69", isVeg: true, imageUrl: "/v1741169830/gulabjamunwithice_njql8b.png" },
+    { id: 1803, category: "Desserts", name: "Brownie", price: "89", isVeg: true, imageUrl: "/v1741169829/brownie_bvvwbh.png" },
+    { id: 1804, category: "Desserts", name: "Brownie with Hot Chocolate", price: "109", isVeg: true, imageUrl: "/v1741169829/brownie_bvvwbh.png" },
+    { id: 1805, category: "Desserts", name: "Brownie with Ice Cream", price: "119", isVeg: true, imageUrl: "/v1741169832/browniewithicecream_lstmrj.png" },
+
+    // COMBO OFFERS
+    { id: 1901, category: "Combo Offers", name: "Veg Burger + Veg Nuggets + Soft Drink", price: "169", isVeg: true, imageUrl: "" },
+    { id: 1902, category: "Combo Offers", name: "Paneer Burger + Fries + Soft Drink", price: "189", isVeg: true, imageUrl: "" },
+    { id: 1903, category: "Combo Offers", name: "Chicken Burger + Chicken Nuggets + Soft Drink", price: "199", isVeg: false, imageUrl: "" },
+    { id: 1904, category: "Combo Offers", name: "Veg Pizza + Veg Burger + Soft Drink", price: "259", isVeg: true, imageUrl: "" },
+    { id: 1905, category: "Combo Offers", name: "Chicken Pizza + Fried Chicken + Soft Drink", price: "279", isVeg: false, imageUrl: "" }
 ];
 
 const categories = [
-    "Biriyani's", "Fried Chicken", "Short Eats", "Wraps", "Burgers", "Pizzas",
-    "Garlic Breads", "Pasta's", "Salad's", "Sandwiches", "Ice Creams", "Milk Shakes",
-    "Mojito's", "Dessert's",
+    "Pizza - Veg", "Pizza - Non Veg", "Burger - Veg", "Burger - Non Veg",
+    "Pasta - Veg", "Pasta - Non Veg", "Sandwich - Veg", "Sandwich - Non Veg",
+    "Wraps - Veg", "Wraps - Non Veg", "Quick Bites - Veg", "Quick Bites - Non Veg",
+    "Momos - Veg", "Momos - Non Veg", "Milkshakes", "Ice Creams", "Mojito", "Desserts",
+    "Combo Offers"
 ];
 
 const Menu = () => {
-    const [selectedCategory, setSelectedCategory] = useState("Biriyani's");
+    const [selectedCategory, setSelectedCategory] = useState("Pizza - Veg");
 
     // Mobile Carousel State
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -194,10 +215,10 @@ const Menu = () => {
                     transition={{ duration: 0.7 }}
                     viewport={{ once: true, amount: 0.1 }}
                 >
-                    <h2 className="section-heading">Street Food & Sips</h2>
+                    <h2 className="section-heading">Our Menu</h2>
                     <div className="gold-divider" />
                     <p className="section-subtitle">
-                        From aromatic biryanis to refreshing mojitos — explore our street-style favorites
+                        Tap items to add to cart, then send your order via WhatsApp!
                     </p>
                 </motion.div>
 
@@ -289,9 +310,8 @@ const Menu = () => {
                     </AnimatePresence>
                 </div>
 
-
                 <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                    <span className="menu-packing-note">*₹10 extra for each item for packing</span>
+                    <span className="menu-packing-note">*₹40 delivery fee. Delivery available within 4km radius only.</span>
                 </div>
             </div>
         </section>
