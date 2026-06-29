@@ -120,7 +120,7 @@ export default function Menu() {
             className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-6 no-scrollbar scroll-smooth"
           >
             {filteredItems.map(item => (
-              <div key={item.id} className="min-w-[85vw] snap-center sm:min-w-0 flex-shrink-0 sm:flex-shrink h-full">
+              <div key={item.id} className="w-[280px] shrink-0 snap-center sm:w-auto sm:min-w-0 sm:flex-shrink h-full">
                 <MenuItem item={item} />
               </div>
             ))}

@@ -29,7 +29,7 @@ export default function MenuItem({ item, isMobile }) {
       ${qty > 0 ? 'ring-1 ring-[var(--gold)]' : ''}
     `}>
       {/* Image Container */}
-      <div className="relative h-40 sm:h-48 w-full overflow-hidden bg-[#020f0a]">
+      <div className="relative h-32 sm:h-48 w-full overflow-hidden bg-[#020f0a]">
         {item.imageUrl && !imgError ? (
           <img 
             src={item.imageUrl} 
@@ -62,27 +62,27 @@ export default function MenuItem({ item, isMobile }) {
             </span>
           </div>
 
-          <h3 className="font-display text-lg sm:text-xl font-bold text-white leading-tight mb-2">
+          <h3 className="font-display text-base sm:text-xl font-bold text-white leading-tight mb-2">
             {item.name}
           </h3>
         </div>
 
         <div className="flex items-center justify-between mt-4">
-          <div className="text-[var(--gold)] font-bold text-lg sm:text-xl">
+          <div className="text-[var(--gold)] font-bold text-base sm:text-xl">
             ₹{item.price}
           </div>
           
           <button 
             onClick={handleAdd}
             className={`
-              relative flex items-center justify-center w-12 h-12 sm:w-10 sm:h-10 rounded-full transition-colors shadow-lg
+              relative flex items-center justify-center w-10 h-10 rounded-full transition-colors shadow-lg
               ${qty > 0 
                 ? 'bg-[var(--gold)] text-[#020f0a]' 
                 : 'bg-white/10 text-white hover:bg-[var(--gold)] hover:text-[#020f0a]'
               }
             `}
           >
-            {qty > 0 ? <Check className="w-6 h-6 sm:w-5 sm:h-5" /> : <Plus className="w-6 h-6 sm:w-5 sm:h-5" />}
+            {qty > 0 ? <Check className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
             
             {/* Quantity Badge */}
             {qty > 0 && (

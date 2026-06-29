@@ -25,7 +25,7 @@ export default function Cart() {
       {!isCartOpen && totalItems > 0 && (
         <button
           onClick={() => setIsCartOpen(true)}
-          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[90] bg-[var(--gold)] text-[#020f0a] p-3 md:p-4 rounded-full shadow-[0_0_20px_rgba(212,168,83,0.4)] hover:scale-110 transition-transform flex items-center justify-center animate-bounce"
+          className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 md:bottom-6 md:right-6 z-[90] bg-[var(--gold)] text-[#020f0a] p-3 md:p-4 rounded-full shadow-[0_0_20px_rgba(212,168,83,0.4)] hover:scale-110 transition-transform flex items-center justify-center animate-bounce"
         >
           <ShoppingBag className="w-6 h-6" />
           <span className="absolute -top-2 -right-2 bg-white text-[#020f0a] text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-lg border-2 border-[var(--gold)]">
@@ -129,7 +129,7 @@ export default function Cart() {
 
         {/* Footer / Checkout */}
         {cartItems.length > 0 && (
-          <div className="p-4 md:p-6 pb-8 md:pb-6 border-t border-white/5 bg-[#020f0a]">
+          <div className="p-4 md:p-6 pb-[calc(2rem+env(safe-area-inset-bottom))] md:pb-6 border-t border-white/5 bg-[#020f0a]">
             <div className="flex justify-between items-center mb-2">
               <span className="text-[var(--text-secondary)] text-sm md:text-base">Subtotal</span>
               <span className="font-bold text-lg text-white">₹{totalPrice}</span>
