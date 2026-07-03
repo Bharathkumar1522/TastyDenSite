@@ -72,6 +72,7 @@ export const CartProvider = ({ children }) => {
     });
     message += `\n💰 *Estimated Total: ₹${totalPrice}/-*`;
     message += `\n🚚 *(₹${CONTACT.deliveryFee} delivery fee | Delivery within ${CONTACT.deliveryRadius}km radius only)*`;
+    message += `\n📍 *Please attach your live location or drop a pin using the 📎 icon below for delivery.*`;
     message += `\n\nPlease confirm availability and delivery time. Thank you! 🙏`;
 
     const encoded = encodeURIComponent(message);
