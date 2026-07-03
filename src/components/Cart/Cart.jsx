@@ -140,16 +140,13 @@ export default function Cart() {
             </div>
             
             <div className="flex flex-col gap-2 md:gap-3">
-              {CONTACT.lines.map((line, idx) => (
-                <button 
-                  key={idx}
-                  onClick={() => sendToWhatsApp(line.raw)}
-                  className="w-full flex items-center justify-center gap-2 bg-[var(--green-whatsapp)] text-white p-3 md:p-4 rounded-xl font-bold hover:bg-green-600 transition-colors shadow-lg shadow-green-500/20 text-sm md:text-base"
-                >
-                  <Send className="w-4 h-4 md:w-5 md:h-5" />
-                  Order via WhatsApp ({line.label})
-                </button>
-              ))}
+              <button 
+                onClick={() => sendToWhatsApp(CONTACT.lines[0].raw)}
+                className="w-full flex items-center justify-center gap-2 bg-[var(--green-whatsapp)] text-white p-3 md:p-4 rounded-xl font-bold hover:bg-green-600 transition-colors shadow-lg shadow-green-500/20 text-sm md:text-base"
+              >
+                <Send className="w-4 h-4 md:w-5 md:h-5" />
+                Order via WhatsApp
+              </button>
               <button 
                 onClick={clearCart}
                 className="w-full mt-1 p-3 md:p-4 rounded-xl border border-white/10 text-[var(--text-muted)] font-bold hover:bg-white/5 hover:text-white transition-colors text-sm md:text-base"
