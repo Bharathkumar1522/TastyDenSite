@@ -66,17 +66,15 @@ export default function Contact() {
                 <h3 className="text-[var(--gold)] font-display text-2xl font-bold">{line.label}</h3>
                 <p className="text-white font-bold text-xl tracking-wide mb-2">{line.phone}</p>
                 <div className="flex flex-row items-center gap-3 w-full">
-                  {idx === 0 && (
-                    <a 
-                      href={`https://wa.me/${line.raw}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[var(--green-whatsapp)] text-white rounded-xl font-bold transition-transform hover:scale-105 active:scale-95 shadow-[0_5px_15px_rgba(37,211,102,0.2)]"
-                    >
-                      <MessageCircle className="w-5 h-5" />
-                      WhatsApp
-                    </a>
-                  )}
+                  <a 
+                    href={`https://wa.me/${line.raw}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[var(--green-whatsapp)] text-white rounded-xl font-bold transition-transform hover:scale-105 active:scale-95 shadow-[0_5px_15px_rgba(37,211,102,0.2)]"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    WhatsApp
+                  </a>
                   <a 
                     href={`tel:${line.raw}`}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-bold transition-all hover:bg-white/20 hover:border-white/40 active:scale-95"
