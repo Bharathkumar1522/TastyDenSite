@@ -71,8 +71,9 @@ export const CartProvider = ({ children }) => {
       message += `${idx + 1}. ${item.name} × ${item.qty} — ₹${item.price}/-\n`;
     });
     message += `\n💰 *Estimated Total: ₹${totalPrice}/-*`;
-    message += `\n🚚 *(₹${CONTACT.deliveryFee} delivery fee | Delivery within ${CONTACT.deliveryRadius}km radius only)*`;
+    message += `\n🚚 *Delivery fee will be determined by the restaurant based on your exact location.*`;
     message += `\n📍 *Please attach your live location or drop a pin using the 📎 icon below for delivery.*`;
+    message += `\n\n⚠️ *Disclaimer: The prices above are for reference purposes only. Any tampered or edited prices will not be accepted.*`;
     message += `\n\nPlease confirm availability and delivery time. Thank you! 🙏`;
 
     const encoded = encodeURIComponent(message);
