@@ -35,7 +35,7 @@ export const SOCIAL = {
     'https://www.facebook.com/profile.php?id=61570224764515&mibextid=rS40aB7S9Ucbxw6v',
   instagram:
     'https://www.instagram.com/the_tastyden_2024?igsh=MWN6NXh6cDIxNWdrcA%3D%3D&utm_source=qr',
-  whatsapp: 'https://wa.me/918142762285',
+  whatsapp: 'https://wa.me/918074473895',
 };
 
 export const MAPS_EMBED_URL =

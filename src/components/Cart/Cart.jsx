@@ -141,7 +141,7 @@ export default function Cart() {
             
             <div className="flex flex-col gap-2 md:gap-3">
               <button 
-                onClick={() => sendToWhatsApp(CONTACT.lines[0].raw)}
+                onClick={() => sendToWhatsApp(CONTACT.lines[1].raw)}
                 className="w-full flex items-center justify-center gap-2 bg-[var(--green-whatsapp)] text-white p-3 md:p-4 rounded-xl font-bold hover:bg-green-600 transition-colors shadow-lg shadow-green-500/20 text-sm md:text-base"
               >
                 <Send className="w-4 h-4 md:w-5 md:h-5" />

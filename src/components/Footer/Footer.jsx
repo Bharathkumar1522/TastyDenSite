@@ -27,11 +27,11 @@ export default function Footer() {
 
             <ul className="space-y-6 text-[var(--text-secondary)]">
               <li className="flex items-start gap-4">
-                <MessageCircle className="w-6 h-6 text-[var(--gold)] shrink-0 mt-1" />
+                <Phone className="w-6 h-6 text-[var(--gold)] shrink-0 mt-1" />
                 <span className="text-lg">{CONTACT.phone}</span>
               </li>
               <li className="flex items-start gap-4">
-                <Phone className="w-6 h-6 text-[var(--gold)] shrink-0 mt-1" />
+                <MessageCircle className="w-6 h-6 text-[var(--gold)] shrink-0 mt-1" />
                 <span className="text-lg">{CONTACT.whatsapp}</span>
               </li>
               <li className="flex items-start gap-4">
